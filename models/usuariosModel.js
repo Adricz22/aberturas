@@ -8,7 +8,7 @@ async function getUsuarioyPassword(user, password) {
 
     return rows[0];
   } catch (error) {
-    console.log("ERROR!!", error.message);
+    console.log("ERROR!!", error);
   }
 }
 module.exports = { getUsuarioyPassword };
