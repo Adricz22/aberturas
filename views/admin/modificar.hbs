@@ -1,0 +1,43 @@
+<div class="container mt-5 pt-5">
+    <div class="row">
+        <div class="col-12 col-sm-7 col-md-6 m-auto">
+            <h3>Modificar una novedad</h3>
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+                        <input type="hidden" value="{{novedad.id}}" name="id" />
+
+                        <div class="input">
+                            <textarea class="form-control my-4" id="" aria-label="With textarea" placeholder="Título"
+                                name="titulo">{{novedad.titulo}}</textarea>
+                        </div>
+                        {{!-- <div class="input">
+                            <textarea class="form-control my-4" id="" aria-label="With textarea" placeholder="Subtítulo"
+                                name="subtitulo"></textarea>
+                        </div> --}}
+                        <div class="input">
+                            <textarea class="form-control my-4" id="" aria-label="With textarea" placeholder="Cuerpo"
+                                name="cuerpo">{{novedad.cuerpo}}</textarea>
+                        </div>
+                        <div>
+                            <label>Imagen: <input type="file" class="form-control my-4" name="imagen"></label>
+                        </div>
+                        <div>
+                            <label><input type="checkbox" name="img_delete" value="1">Eliminar
+                                imagen actual?</label>
+                        </div>
+                        <input type="hidden" name="img_original" value="{{novedad.img_id}}">
+
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-primary">Modificar</button>
+                        </div>
+                    </form>
+                    {{#if error}}
+                    {{message}}
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

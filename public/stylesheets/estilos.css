@@ -1,0 +1,104 @@
+/* Estilos en comun */
+body {
+    position: relative;
+    color: #908b8b;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2e64a1;
+}
+
+.text2 {
+    font-size: 20px;
+}
+
+
+/* Header */
+header {
+    background-color: rgb(1, 15, 17);
+    height: 115px;
+}
+
+.logo {
+
+    padding-top: 10px;
+    padding-left: 20px;
+    width: 500px;
+    height: 115px;
+}
+
+.img_logo {
+    width: 370px;
+}
+
+/* Nav */
+.nav-bg {
+    background-color: #6da9ed;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navegacion a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 0.2em 0.4em;
+}
+
+.navegacion a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.activo {
+    background-color: #4c76a5;
+}
+
+/* Footer */
+footer {
+    background-color: rgb(1, 15, 17);
+    color: white;
+    padding: 2em 0;
+    margin-top: 1em;
+}
+
+.copyright {
+    /* float: left; */
+    margin-left: 10px;
+}
+
+.social_foo {
+    float: right;
+    margin-right: 100px;
+    position: relative;
+    bottom: 20px;
+}
+
+/* Productos */
+.encabezado {
+    margin-top: 10px;
+}
+
+/* Servicios */
+.sal {
+    width: 32%;
+    text-align: center;
+}
+
+.borde {
+    border-radius: 5%;
+}
+
+.servicios {
+    display: flex;
+    justify-content: space-between;
+}
