@@ -13,7 +13,7 @@ var pool = mysql.createPool({
   // database: process.env.MYSQL_DB_NAME,
 });
 
-let sql = "SELECT * FROM usuarios";
+let sql = "SELECT * FROM novedades";
 
 pool.execute(sql, (err, result) => {
   if (err) throw err;
