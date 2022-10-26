@@ -1,4 +1,3 @@
-require("dotenv").config();
 var mysql = require("mysql2");
 
 var pool = mysql.createPool({
@@ -7,6 +6,7 @@ var pool = mysql.createPool({
   user: "root",
   password: "H1jpKQvDZDme5yXwKDCM",
   database: "railway",
+  port: 7029,
   // host: process.env.MYSQL_HOST,
   // user: process.env.MYSQL_USER,
   // password: process.env.MYSQL_PASSWORD,
