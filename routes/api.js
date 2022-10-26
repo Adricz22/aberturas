@@ -7,8 +7,6 @@ var nodemailer = require("nodemailer");
 router.get("/novedades", async function (req, res, next) {
   let [novedades] = await novedadesModel.getNovedades();
 
-  console.log("ESTRUCTURA NOVEDADES ", novedades);
-
   novedades = novedades.map((novedades) => {
     if (novedades.img_id) {
       const imagen = cloudinary.url(novedades.img_id, {
