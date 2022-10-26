@@ -1,5 +1,4 @@
-var mysql = require("mysql2/promise");
-// var util = require("util");
+var mysql = require("mysql2");
 
 var pool = mysql.createPool({
   connectionLimit: 10,
@@ -9,6 +8,12 @@ var pool = mysql.createPool({
   database: process.env.MYSQL_DB_NAME,
 });
 
-// pool.query = util.promisify(pool.query);
+let sql = "SELECT * FROM usuarios";
 
-module.exports = pool;
+pool.execute(sql, (err, result) => {
+  if (err) throw err;
+
+  console.log("RESULT ", result);
+});
+
+module.exports = pool.promise();
