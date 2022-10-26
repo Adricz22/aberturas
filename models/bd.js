@@ -9,8 +9,8 @@ var pool = mysql.createPool({
   port: process.env.MYSQL_PORT,
 });
 
-let sql = "SELECT * FROM usuarios";
-
+// test connection
+let sql = "SELECT * FROM novedades";
 pool.execute(sql, (err, result) => {
   if (err) throw err;
 
