@@ -10,10 +10,10 @@ var pool = mysql.createPool({
 });
 
 // test connection
-// let sql = "SELECT * FROM usuarios";
-// pool.execute(sql, (err, result) => {
-//   if (err) throw err;
-//   console.log("RESULT ", result);
-// });
+let sql = "SELECT * FROM usuarios";
+pool.execute(sql, (err, result) => {
+  if (err) throw err;
+  console.log("RESULT ", result);
+});
 
 module.exports = pool.promise();
