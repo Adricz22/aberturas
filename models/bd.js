@@ -2,11 +2,13 @@ var mysql = require("mysql2");
 
 var pool = mysql.createPool({
   connectionLimit: 10,
-  host: process.env.RDS_HOSTNAME,
-  user: process.env.RDS_USERNAME,
-  password: process.env.RDS_PASSWORD,
   database: process.env.RDS_DB_NAME,
-  port: process.env.RDS_DB_PORT,
+  user: process.env.RDS_USERNAME,
+  host: process.env.RDS_HOSTNAME,
+  password: process.env.RDS_PASSWORD,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 // test connection
