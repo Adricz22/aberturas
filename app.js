@@ -9,7 +9,7 @@ var session = require("express-session");
 var fileUpload = require("express-fileupload");
 var cors = require("cors");
 
-var homeRouter = require("./routes/home");
+var indexRouter = require("./routes");
 var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/admin/login");
 var novedadesRouter = require("./routes/admin/novedades");
@@ -55,7 +55,7 @@ app.use(
   })
 );
 
-app.use("/", homeRouter);
+app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin/login", loginRouter);
 app.use("/admin/novedades", secured, novedadesRouter);
