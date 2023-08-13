@@ -6,6 +6,8 @@ var logger = require("morgan");
 
 require("dotenv").config();
 var session = require("express-session");
+var MemoryStore = require("memorystore")(session);
+
 var fileUpload = require("express-fileupload");
 var cors = require("cors");
 
@@ -27,8 +29,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// app.use(
+//   session({
+//     secret: "PW2022abcdef",
+//     resave: false,
+//     saveUninitialized: true,
+//   })
+// );
+
 app.use(
   session({
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000, // prune expired entries every 24h
+    }),
     secret: "PW2022abcdef",
     resave: false,
     saveUninitialized: true,
