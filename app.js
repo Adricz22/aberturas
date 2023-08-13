@@ -12,7 +12,7 @@ var cookieSession = require("cookie-session");
 var fileUpload = require("express-fileupload");
 var cors = require("cors");
 
-var indexRouter = require("./routes");
+var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var loginRouter = require("./routes/admin/login");
 var novedadesRouter = require("./routes/admin/novedades");
