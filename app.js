@@ -6,7 +6,7 @@ var logger = require("morgan");
 
 require("dotenv").config();
 // var session = require("express-session");
-var session = require("cookie-session");
+var cookieSession = require("cookie-session");
 
 var fileUpload = require("express-fileupload");
 var cors = require("cors");
