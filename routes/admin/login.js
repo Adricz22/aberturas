@@ -13,7 +13,6 @@ router.get("/logout", function (req, res, next) {
   // req.session.destroy();
   // req.session = null;
   res.clearCookie("session");
-  res.clearCookie("session.sig");
   res.render("admin/login", {
     layout: "admin/layout",
   });
