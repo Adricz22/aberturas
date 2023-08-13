@@ -5,8 +5,8 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 require("dotenv").config();
-var session = require("express-session");
-var MemoryStore = require("memorystore")(session);
+// var session = require("express-session");
+var session = require("cookie-session");
 
 var fileUpload = require("express-fileupload");
 var cors = require("cors");
@@ -38,14 +38,12 @@ app.use(express.static(path.join(__dirname, "public")));
 // );
 
 app.use(
-  session({
-    cookie: { maxAge: 86400000 },
-    store: new MemoryStore({
-      checkPeriod: 86400000, // prune expired entries every 24h
-    }),
-    secret: "PW2022abcdef",
-    resave: false,
-    saveUninitialized: true,
+  cookieSession({
+    name: "session",
+    keys: "PW2022abcdef",
+
+    // Cookie Options
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
   })
 );
 
