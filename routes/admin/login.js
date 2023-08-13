@@ -10,7 +10,8 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/logout", function (req, res, next) {
-  req.session.destroy();
+  // req.session.destroy();
+  req.session = null;
   res.render("admin/login", {
     layout: "admin/layout",
   });
