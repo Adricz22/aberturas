@@ -29,7 +29,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+// app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+app.use(favicon(path.join(__dirname, "public/favicon.ico")));
+
+// Returns a middleware to serve favicon
+// app.use(favicon(__dirname + '/favicon.ico'));
 
 // app.use(
 //   session({
